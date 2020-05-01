@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Game of Life</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./src/style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container text-center">
+        <h1 id="title"></h1>
+        <div class="">Cliquez sur les cases pour choisir la configuration de départ</div>
+        <div class="col-md-5 mx-auto">
+            <button class="btn btn-secondary" id="initialize">RéInitialisation</button>
+            <button class="btn btn-primary" id="generation">Génération</button>
+            <span id="day"></span>
+        </div>
+        <table class="mx-auto mt-3" id="world">
+            
+        </table>
+    </div>
+    
+    
+</body>
+<script
+src="https://code.jquery.com/jquery-3.5.0.min.js"
+integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+crossorigin="anonymous"></script>
+<script type="text/javascript" src="./src/gameOfLife.js" ></script>
+</html> 
