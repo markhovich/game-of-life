@@ -1,13 +1,55 @@
+@font-face {
+    font-family: "FX Matrix";
+    src: url("./FXMatrix105MonoPicaRegular.woff");
+}
+
+@font-face {
+    font-family: "FX Matrix Bold";
+    src: url("./FXMatrix105MonoPicaBold.woff");
+}
+
+body{
+    background-color: rgb(167, 224, 80);
+    font-family: "FX Matrix";
+}
+
+header{
+    background: linear-gradient(grey 80%, rgb(83, 83, 83));
+}
+
+footer{
+    background: linear-gradient(rgb(83, 83, 83), grey 80%);
+}
+
+
+h1{
+    text-align: center;
+    font-family: "FX Matrix Bold";
+}
+
+table{
+    border: 4px solid black;
+}
 .cell{
-    width: 30px;
-    height: 30px;
-    border: 1px solid black;
+    width: 13px;
+    height: 13px;
+    border: 1px dotted black;
+    background-color: white;
 }
 
 .alive{
     background-color: black;
 }
 
-.dead{
-    background-color: white;
+.list-group-item:first-child, .list-group-item:last-child,.btn{
+    border-radius: 0rem;
+}
+
+.btn-primary{
+    background-color: blue;
+    border-color: blue;
+}
+
+a{
+    color: blue;
 }

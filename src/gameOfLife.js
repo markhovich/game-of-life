@@ -1,9 +1,9 @@
 
 
 $(document).ready(function(){
-    var x=20;   
+    var x=50;   
     var day = 1;
-    console.log('App ready !')
+    console.log('Game Of Life ready !')
     
     $('#title').html('Le Jeu de la Vie !');
     
@@ -26,6 +26,7 @@ $(document).ready(function(){
     $('#initialize').on('click', function(){
         day = 1;
         $('#day').html('Jour ' + day++);
+        clearInterval(interval);
         $('td').each(function() {
             let id = '#' + this.id;
             $(id).removeClass('alive');
@@ -54,8 +55,25 @@ $(document).ready(function(){
         return 0;
     }
     
+    //Ajout de l'Event Listener sur le bouton Start
+    $('.start').on('click', function() {
+        
+        if($(this).hasClass('start')){
+            $(this).html('Stop');
+            interval = setInterval(generationTest, 1200);
+        } else {
+            $(this).html('Start');
+            clearInterval(interval);
+        }
+        $(this).toggleClass('start stop');
+        $(this).toggleClass('btn-success btn-danger')
+    })
+
     // Ajout de l'event listener au clique sur le bouton de génération
-    $('#generation').on('click', function(){
+    $('#generation').on('click', generationTest)
+
+    //Fonction appelée à chaque étpae de génération
+    function generationTest(){
         $('#day').html('Jour ' + day++);
         
         // Initialisation du tableau des voisins
@@ -138,7 +156,5 @@ $(document).ready(function(){
                 }
             }
         }
-        
-    })
-    
+    }
 })

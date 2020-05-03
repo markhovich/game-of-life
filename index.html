@@ -3,30 +3,58 @@
 <head>
     <title>The Game of Life</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./src/style.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./src/style.css">
 </head>
 
 <body>
-    <div class="container text-center">
-        <h1 id="title"></h1>
-        <div class="">Cliquez sur les cases pour choisir la configuration de départ</div>
-        <div class="col-md-5 mx-auto">
-            <button class="btn btn-secondary" id="initialize">RéInitialisation</button>
-            <button class="btn btn-primary" id="generation">Génération</button>
-            <span id="day"></span>
+    <header class="pt-3 pb-5 mb-5 bg-dark">
+        <h1 id="title" class="text-light"></h1>
+        <div class="row container mx-auto mt-5">
+            <div class="col-md-5 text-light text-justify">
+                <h4>Kezako</h4>
+                <p>Le jeu de la vie est un automate cellulaire imagine par le mathematicien anglais John Horton Conway en 1970 
+                    et qui est probablement le plus connu d'entre eux. 
+                    Malgre des règles très simples, le jeu de la vie est Turing-complet.
+                </p>
+                <a href="https://fr.wikipedia.org/wiki/Jeu_de_la_vie">Source Wikipedia</a>
+            </div>
+            <ul class="list-group col-md-6 mx-auto">
+                <li class="list-group-item list-group-item-dar">1 cellule ayant exactement 3 voisins prend vie (devient noire)</li>
+                <li class="list-group-item list-group-item-dar">1 cellule ayant exactement 2 voisins reste dans son etat</li>
+                <li class="list-group-item list-group-item-dar">1 cellule ayant moins 2 voisins OU plus de 3 voisins meurt (devient blanche)</li>
+            </ul>
         </div>
-        <table class="mx-auto mt-3" id="world">
+    </header>
+    <div class="container text-center">
+        <div class="">Pour choisir la configuration de depart, cliquez sur les cases cela les fera changer d'état </div>
+        <div class="row py-3 justify-content-center">
+            <div class="col-md-4">
+                <button class="btn btn-light" id="initialize">ReInit</button>
+                <button class="btn btn-primary" id="generation">Pas-à-pas</button>
+                <button class="btn btn-success start">Start</button>
+            </div>
+            <div class="col-md-4">
+                <span id="day" class="badge badge-warning"></span>
+            </div>
+        </div>
+    </div>
+        <table class="mx-auto my-3" id="world">
             
         </table>
-    </div>
+   
     
-    
-</body>
-<script
-src="https://code.jquery.com/jquery-3.5.0.min.js"
-integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
-crossorigin="anonymous"></script>
-<script type="text/javascript" src="./src/gameOfLife.js" ></script>
-</html> 
+    <footer class="pb-4 pt-5 bg-dark">
+        <p class="col-md-6 mx-auto text-center text-light">Automate cellulaire imagine par <a href="https://www.google.com/search?client=firefox-b-d&q=john+conwey">John Conway</a> en 1970<br>  
+            Cette version a ete realisee par <a href="http://jmdev.us-east-2.elasticbeanstalk.com/">Julien Marque</a> en 2020</p>
+        </footer>
+        
+        
+    </body>
+    <script
+    src="https://code.jquery.com/jquery-3.5.0.min.js"
+    integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./src/gameOfLife.js" ></script>
+    </html> 
