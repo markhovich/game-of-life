@@ -1,7 +1,8 @@
 
 
 $(document).ready(function(){
-    var x=50;   
+    // Taille de la grille
+    var x=50;
     var day = 1;
     console.log('Game Of Life ready !')
     
