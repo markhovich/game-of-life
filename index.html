@@ -28,21 +28,44 @@
         </div>
     </header>
     <div class="container text-center">
-        <div class="">Pour choisir la configuration de depart, cliquez sur les cases cela les fera changer d'état </div>
+        <div class="">Pour choisir la configuration de depart, cliquez sur les cases cela les fera changer d'etat </div>
         <div class="row py-3 justify-content-center">
             <div class="col-md-4">
                 <button class="btn btn-light" id="initialize">ReInit</button>
                 <button class="btn btn-primary" id="generation">Pas-à-pas</button>
-                <button class="btn btn-success start">Start</button>
+                <button class="btn btn-success start" id="play">Start</button>
             </div>
             <div class="col-md-4">
+                Zoom
+                <button class="btn btn-info" id="zoom-out">-</button>
+                <button class="btn btn-info" id="zoom-in">+</button>
                 <span id="day" class="badge badge-warning"></span>
             </div>
         </div>
     </div>
-        <table class="mx-auto my-3" id="world">
-            
+    <div class="mx-auto my-3" id="canvas">
+        <table  id="world">   
         </table>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="">Les structures speciales</h2>
+        <div class="row my-5">
+            <div class="col-md-6">
+                <h3>Les planeurs</h3>
+                <p>Structures periodiques qui derivent à l'infini</p>
+                <img src="./images/planeur1.jpg" alt="">
+                <img src="./images/planeur2.jpg" alt="">
+
+            </div>
+            <div class="col-md-6">
+                <h3>Les canons</h3>
+                <p>Structures periodiques qui emettent des planeurs</p>
+                <img src="./images/glider-gun.jpg" alt="">
+            </div>
+        </div>
+    </div>
+        
    
     
     <footer class="pb-4 pt-5 bg-dark">

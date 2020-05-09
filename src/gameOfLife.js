@@ -2,7 +2,7 @@
 
 $(document).ready(function(){
     // Taille de la grille
-    var x=50;
+    var x=100;
     var day = 1;
     console.log('Game Of Life ready !')
     
@@ -22,12 +22,19 @@ $(document).ready(function(){
             $row.append($cell);
         }
     }
+    //Initialisation de la fenetre visible au milieu de la table
+    let verticalMiddle = $('#canvas').height() / 2 + 240;
+    let horizontalMiddle = $('#canvas').width() / 2 - 180;
+    $('#canvas').scrollTop(verticalMiddle).scrollLeft(horizontalMiddle);
     
     // RéInitialisation de la table
     $('#initialize').on('click', function(){
         day = 1;
         $('#day').html('Jour ' + day++);
         clearInterval(interval);
+        $('#play').html('Start').removeClass('stop').addClass('start');
+        $('#play').removeClass('btn-danger').addClass('btn-success');
+        $('#generation').removeAttr('disabled');
         $('td').each(function() {
             let id = '#' + this.id;
             $(id).removeClass('alive');
@@ -60,14 +67,15 @@ $(document).ready(function(){
     $('.start').on('click', function() {
         
         if($(this).hasClass('start')){
+            $('#generation').attr('disabled', 'disabled');
             $(this).html('Stop');
-            interval = setInterval(generationTest, 1200);
+            interval = setInterval(generationTest, 500);
         } else {
+            $('#generation').removeAttr('disabled');
             $(this).html('Start');
             clearInterval(interval);
         }
-        $(this).toggleClass('start stop');
-        $(this).toggleClass('btn-success btn-danger')
+        $(this).toggleClass('start stop').toggleClass('btn-success btn-danger');
     })
 
     // Ajout de l'event listener au clique sur le bouton de génération
@@ -158,4 +166,13 @@ $(document).ready(function(){
             }
         }
     }
+
+    // Ajout de l'event listener sur les boutons zoom in et out
+    $('#zoom-out').on('click', function() {
+        $('#world').css({'transform': 'scale(0.75)'});
+    })
+
+    $('#zoom-in').on('click', function() {
+        $('#world').css({'transform': 'scale(1.7)'});
+    })
 })
